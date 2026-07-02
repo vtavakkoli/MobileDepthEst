@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/depth_surface"
+    tools:context=".LiveDepthActivity">
+
+    <!-- Top Section: RGB and Depth -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/depthOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline_v"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#80000000"
+        android:padding="4dp"
+        android:text="Camera"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/viewFinder"
+        app:layout_constraintTop_toTopOf="@+id/viewFinder" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#80000000"
+        android:padding="4dp"
+        android:text="Depth"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/depthOverlay"
+        app:layout_constraintTop_toTopOf="@+id/depthOverlay" />
+
+    <!-- Calibration Slider -->
+    <LinearLayout
+        android:id="@+id/calibrationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_h">
+
+        <TextView
+            android:id="@+id/liveScaleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Depth ratio: 3.00 m"
+            android:textColor="@color/depth_text_secondary"
+            android:textSize="12sp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/liveRatioSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="3.0"
+            android:valueFrom="0.1"
+            android:valueTo="10.0"
+            android:stepSize="0.1" />
+    </LinearLayout>
+
+    <!-- Bottom Section: 3D View -->
+    <com.ai.mob_dep.DepthMeshView
+        android:id="@+id/liveMeshView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/preview_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calibrationLayout" />
+
+    <ProgressBar
+        android:id="@+id/liveProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/liveStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#CC000000"
+        android:padding="8dp"
+        android:text="Starting camera..."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/liveMeshView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

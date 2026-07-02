@@ -29,6 +29,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LiveDepthActivity"
+            android:exported="false"
+            android:label="Live Depth Estimation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OfflineDepthActivity"
+            android:exported="false"
+            android:label="Offline Depth Estimation"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

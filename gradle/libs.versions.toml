@@ -10,6 +10,7 @@ activityKtx = "1.13.0"
 constraintlayout = "2.2.1"
 coreSplashscreen = "1.2.0"
 litert = "2.1.6"
+camerax = "1.4.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -21,6 +22,10 @@ activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
 litert = { group = "com.google.ai.edge.litert", name = "litert", version.ref = "litert" }
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "camerax" }
+camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camerax" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camerax" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camerax" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
