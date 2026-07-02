@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="depth_primary">#2148F3</color>
+    <color name="depth_primary_dark">#071642</color>
+    <color name="depth_secondary">#00D4FF</color>
+    <color name="depth_accent">#7C4DFF</color>
+    <color name="depth_surface">#F6F8FF</color>
+    <color name="depth_card">#FFFFFFFF</color>
+    <color name="depth_text_primary">#152033</color>
+    <color name="depth_text_secondary">#5D6B82</color>
+    <color name="depth_success">#00A676</color>
+    <color name="depth_warning">#FF8A00</color>
 </resources>

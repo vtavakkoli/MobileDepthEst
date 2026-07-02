@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# LiteRT JNI/runtime classes used by the CompiledModel API.
+-keep class com.google.ai.edge.litert.** { *; }
+-keep class org.tensorflow.** { *; }

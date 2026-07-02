@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.MobDep" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/depth_primary</item>
+        <item name="colorPrimaryVariant">@color/depth_primary_dark</item>
+        <item name="colorSecondary">@color/depth_secondary</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/depth_primary_dark</item>
+        <item name="android:navigationBarColor">@color/depth_primary_dark</item>
     </style>
 
     <style name="Theme.MobDep" parent="Base.Theme.MobDep" />
+
+    <style name="Theme.MobDep.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/depth_primary_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_depth_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.MobDep</item>
+    </style>
 </resources>

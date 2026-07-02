@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MobDep</string>
+    <string name="app_name">MobileDepthEst</string>
+    <string name="author_line">Written by Dr. Vahid Tavakkoli · MIT License · Education purpose</string>
+    <string name="model_name">LiteRT · Depth Anything 3 Small</string>
 </resources>
